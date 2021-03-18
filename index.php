@@ -1,7 +1,10 @@
-<?php include("Web/conect.php"); 
- if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-    }
-    echo "Connected successfully";
+<?php 
+    // include("Web/conect.php");
+     
+
+    //content in here
+    include("src/HomePage.php");
+    include("src/components/footer.php");
+   
 
 ?>
