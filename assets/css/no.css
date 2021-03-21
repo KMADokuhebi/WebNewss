@@ -1,0 +1,68 @@
+@charset "utf-8";
+@font-face {
+	font-family: Quicksand;
+	src: url(font\Quicksand\Quicksand-Medium.ttf);
+}
+
+* {
+	font-family: Quicksand, sans-serif;
+}
+
+	
+#post {
+   width: 45%;
+padding-left: 17%;
+	
+  
+	float:left;
+}
+#sidebar {
+ width: 20%;
+
+position: fixed;
+right:15%;
+	float:right;
+	
+	
+	
+ 
+
+}
+#date{
+	display: block;
+ padding-left: 40%;
+	
+
+}
+
+p {
+	line-height: 140%;
+	font-size: 19px;
+/*	*/
+	
+	
+}
+
+
+}
+body {
+    background-color: #F8F8FF;
+}
+
+
+img {
+	max-width:100%;
+	
+}
+
+@media only screen and (max-width: 880px) {
+	#sidebar {
+		display: none;
+	}
+	#post {
+		width: 66%;
+	}
+}
+#no1 {
+	max-width: 100%;
+}
