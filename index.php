@@ -3,8 +3,9 @@
      
 
     //content in here
-    include("src/HomePage.php");
-    include("src/components/footer.php");
+    // include("src/contennews.html");
+    // include("src/components/footer.php");
+    include("src/Homepage.html");
    
 
 ?>
