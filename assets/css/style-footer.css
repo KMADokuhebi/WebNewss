@@ -1,8 +1,10 @@
 @charset "utf-8";
-a:link{
+  a:link{
 	text-decoration:none;
-	color:black;
+	  color:black;
+	  line-height: 20px;
 }
+
 a:visited{
 	color: black;
 }
@@ -10,59 +12,59 @@ a:hover{
 	color: red;
 }
 #Cot1{
-	width: 125px;
+	width: 215px;
 	background: #E2D6D6;
-	top:9px;
+	top:3px;
 	position: absolute;
 	height: 150px;
 	text-align: center;
 }
 #Cot2{
-	width: 125px;
+	width: 215px;
 	background: #E2D6D6;
-	left: 125px;
-	top:9px;
+	left: 215px;
+	top:3px;
 	position: absolute;
 	height: 150px;
 	text-align: center;
 }
 
 #Cot3{
-	width: 125px;
+	width: 215px;
 	background: #E2D6D6;
-	left: 250px;
-	top:9px;
+	left: 430px;
+	top:3px;
 	position: absolute;
 	height: 150px;
 	text-align: center;
 
 }
 #Cot4{
-	width: 125px;
+	width: 215px;
 	background: #E2D6D6;
-	left: 375px;
-	top:9px;
+	left: 645px;
+	top:3px;
 	position: absolute;
 	height: 150px;
 	text-align: center;
 
 }
 #Cot5{
-	width: 125px;
+	width: 215px;
 	background: #E2D6D6;
-	left: 500px;
-	top:9px;
+	left: 860px;
+	top:3px;
 	position: absolute;
 	height: 150px;
 	text-align: center;
 }
 #Cot6{
-	width: 125px;
+	width: 215px;
 	background: #E2D6D6;
-	top:9px;
+	top:3px;
 	position: absolute;
 	height: 150px;
-	left: 625px;
+	left: 1075px;
 	border-left-width: 2px;
 	border-left-style: dotted;
 	text-align: center;
@@ -71,11 +73,12 @@ a:hover{
 }
 #footer{
 	border-top-width: 3px;
-	width: 750px;
+	width: 1300px;
 	border-top-style: solid;
-	top:9px;
+	bottom:0px;
 	position: absolute;
-	height: 350px;
+	height: 330px;
+	left:100px;
 }
 #Cot7{
 	width: 400px;
@@ -83,6 +86,7 @@ a:hover{
 	position: absolute;
 	height: 150px;
 	line-height: 2px;
+	top:5px;
 	
 }
 #Cot8{
@@ -94,6 +98,8 @@ a:hover{
 	text-align: center;
 	border-left-width: 2px;
 	border-left-style: dotted;
+	top:5px;
+	
 	
 }
 #Cot9{
@@ -105,13 +111,15 @@ a:hover{
 	border-left-width: 2px;
 	border-left-style: dotted;
 	text-align: center;
+	top:5px;
+	
 	
 }
 #Duoi{
 	border-top-width: 3px;
-	width: 750px;
+	width: 1300px;
 	border-top-style: solid;
-	top:175px;
+	top:160px;
 	position: absolute;
 	height: 150px;
 	
