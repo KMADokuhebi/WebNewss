@@ -24,10 +24,10 @@ services:
     build: ./.docker/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: news
+      MYSQL_DATABASE: Webtintuc
     volumes:
       - ./.docker/mysql/my.conf:/etc/mysql/conf.d/my.conf:ro
-      - ./.docker/mysql/web.sql:/etc/web.sql:ro
+      - ./.docker/mysql/web.sql:/docker-entrypoint-initdb.d/web.sql:ro
       - mysqldata:/var/lib/mysql
 
   phpmyadmin:
