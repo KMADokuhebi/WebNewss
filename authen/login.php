@@ -4,17 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Express</title>
-    <link href="/web/assets/css/style-login.css" rel="stylesheet">
-    <script language="javascript" src="/web/assets/js/Effect-PopupLogin.js"></script>
+    <link href="/assets/css/style-login.css" rel="stylesheet">
+    <script language="javascript" src="/assets/js/Effect-PopupLogin.js"></script>
 </head>
 
 <body>
-    <?php 
-if (isset($_POST["submit"])) {
-    echo $_POST["email"];
-    echo $_POST["password"];
-}
-?>
+
+
+
     <button onclick="togglePopup()">Đăng nhập</button>
 
     <section class="popup" id="popup-1">
@@ -40,13 +37,12 @@ if (isset($_POST["submit"])) {
                 <p>Tạo tài khoản với</p>
                 <!-- <button class="box-link">Facebook</button><br> -->
                 <!-- <button class="box-link gg">Google</button> -->
-                <form class="btn-list" method="POST" action="login.php">
+                <form class="btn-list" method="POST" action="/authen/xuli.php">
                     <input type="text" name="email" value="" placeholder=" Email" class="box-input"><br>
                     <input type="password" name="password" value="" placeholder=" Mật Khẩu" class="box-input"><br>
-                    <input type="password" name="repassword" value="" placeholder=" Nhập lại mật khẩu"
-                        class="box-input"><br>
+                    <input type="password" name="repassword" value="" placeholder=" Nhập lại mật khẩu" class="box-input"><br>
 
-                    <input type="submit" value="Đăng Ký" name="submit" class="logo-login" require="xuli.php">
+                    <input type="submit" value="Đăng Ký" name="reg_submit" class="logo-login">
                 </form>
             </section>
         </section>
