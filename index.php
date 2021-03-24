@@ -1,10 +1,7 @@
-<?php 
-    // include("Web/conect.php");
-    //  include("web/authen/login.php");
-    // include("web/src/components/slideshow.html");
-    //content in here
-    // include("src/Homepage.html");
-   include("web/src/components/footer.php");
-   
-
-?>
+<?php
+// include("Web/conect.php");
+//  include("authen/login.php");
+// include("src/components/slideshow.html");
+// include("src/menu.php");
+// include("src/Homepage.html");
+// include("src/components/footer.html");
