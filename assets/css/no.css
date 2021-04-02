@@ -13,12 +13,17 @@
 	float:left;
 	margin-top: -12px;
 }
+.post img{
+	max-width: 656px;
+	max-height: 438px;
+}
 .sidebar {
  	width: 20%;
 	position: fixed;
 	right: 13%;
 	float:right;
 	font-size: 12px;
+	padding-top: 20px;
 }
 .date{
 	display: block;
@@ -46,6 +51,10 @@ a:hover{
 	font-size: 15px;
 	border: 1px solid red;
 	margin-top: 10px;
+}
+.sidebar image{
+	max-width: 274px;
+	max-height: 172px;
 }
 .line-bottom{
 	border-bottom: 1px solid #B40431;

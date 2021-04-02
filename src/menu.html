@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../assets/css/style-menu.css">
+        <link href="../assets/css/style-login.css" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <script language="javascript" src="../assets/js/Effect-PopupLogin.js"></script>
+    </head>
+    <body>
+<!-- menu -->
+    <section class="menu">
+        <button class="icon-home"><i class="fa fa-home"></i></button>
+        <ul class="menu-bar">
+            <li>
+                <a href="#">Mới nhất</a>
+            </li>
+            <li>
+                <a href="#">Thời sự</a>
+                <ul class="sub-menu">
+                    <li><a href="#">Chính trị</a></li>
+                </ul>
+                <ul class="sub-menu">
+                    <li><a href="#">Giao thông</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Thế giới</a>
+                <ul class="sub-menu">
+                    <li><a href="#">Tư liệu</a></li>
+                </ul>
+                <ul class="sub-menu">
+                    <li><a href="#">Phân tích</a></li>
+                </ul>
+                <ul class="sub-menu">
+                    <li><a href="#">Quân sự</a></li>
+                </ul>
+                <ul class="sub-menu">
+                    <li><a href="#">Cuộc sống đó đây</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Kinh doanh</a>
+                <ul class="sub-menu">
+                    <li><a href="#">Quốc tế</a></li>
+                </ul>
+                <ul class="sub-menu">
+                    <li><a href="#">Doanh nghiệp</a></li>
+                </ul>
+                <ul class="sub-menu">
+                    <li><a href="#">Chứng khoán</a></li>
+                </ul>
+                <ul class="sub-menu">
+                    <li><a href="#">Bất động sản</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Giải trí</a>
+                <ul class="sub-menu">
+                    <li><a href="#">Giới sao</a></li>
+                </ul>
+                <ul class="sub-menu">
+                    <li><a href="#">Video</a></li>
+                </ul>
+                <ul class="sub-menu">
+                    <li><a href="#">Thời trang</a></li>
+                </ul>
+                <ul class="sub-menu">
+                    <li><a href="#">Phim</a></li>
+                </ul>
+                <ul class="sub-menu">
+                    <li><a href="#">Nhạc</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Thể thao</a>
+                <ul class="sub-menu">
+                    <li><a href="#">Bóng đá</a></li>
+                </ul>
+                <ul class="sub-menu">
+                    <li><a href="#">Lịch thi đấu</a></li>
+                </ul>
+            </li>
+        </ul>   
+        <section class="zone">
+            <section class="container">
+            <input type="text" name="search" placeholder="Search.." class="box-search">
+            <button class="icon-search"><i class="fa fa-search"></i></button>
+            </section>
+            <button class="button-login" onclick="togglePopup()">Đăng nhập</button>
+
+            <section class="popup" id="popup-1">
+                <section class="overlay"></section> 
+                <section class="content">
+                <section class="close-btn" onclick="togglePopup()">&times;</section>
+                
+                <section class="tabs">
+                    <button class="tablinks" onclick="openUser(event,'login')">Đăng Nhập</button>
+                    <button class="tablinks" onclick="openUser(event,'regis')">Tạo tài khoản</button>
+                </section>
+
+                <section id="login" class="tabcontent">
+                    <p>Đăng nhập với Email</p>
+                    <form class="btn-list">
+                        <input type="text" value="" placeholder=" Email" class="box-input"><br>
+                        <input type="text" value="" placeholder=" Mật Khẩu" class="box-input"><br>
+                        <input type="submit" value="Đăng nhập" class="logo-login">
+                    </form>
+                    <button class="reset-pass" onclick="repassPopup()">Lấy lại mật khẩu<button>
+                </section>
+                    <section id="regis" class="tabcontent ">
+                    <p>Tạo tài khoản với</p>
+                        <button class="box-link">Facebook</button><br>
+                        <button class="box-link gg">Google</button>
+                </section>
+            </section>
+            </section>
+            
+            <section class="popup" id="popup-2">
+                <section class="overlay"></section> 
+                <section class="content">
+                <section class="close-btn" onclick="repassPopup()">&times;</section>
+        
+                <section id="login" class="tabcontent">
+                    <h2 style="border-bottom: 1px solid #BDBDBD; padding-bottom: 10px;">Lấy lại mật khẩu</h2>
+                    <p style="margin-top: 10px;">Nhập email của bạn để lấy lại mật khẩu</p>
+                    <form class="btn-list">
+                        <input type="text" value="" placeholder=" Nhập email" class="box-input"><br>
+                        <input type="submit" value="Lấy lại mật khẩu" class="logo-login">
+                    </form>
+                </section>
+                <section id="regis" class="tabcontent tabnone">
+                    <p>Tạo tài khoản với</p>
+                        <button class="box-link">Facebook</button><br>
+                        <button class="box-link gg">Google</button>
+                </section>
+            </section>
+            </section>
+
+        </section>
+    </section>
+    </body>
+</html>
