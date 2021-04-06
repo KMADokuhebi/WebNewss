@@ -4,4 +4,4 @@
 // include("src/components/slideshow.html");
 // include("src/menu.php");
 // include("src/Homepage.html");
-// include("src/components/footer.html");
+require_once("src/components/footer.html");

@@ -1,1 +1,0 @@
-mysql -u root -p < /docker-entrypoint-initdb.d/web.sql
