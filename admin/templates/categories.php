@@ -130,6 +130,7 @@ if ($user) {
     }
     // chua dang nhap    
 } else {
-    echo ("<script>location.href = '/';</script>"); // ve trang chu ngay
+    echo ("<script>location.href = '/';</script>");
+    // ve trang chu ngay
 
 }
