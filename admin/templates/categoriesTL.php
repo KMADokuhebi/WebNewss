@@ -1,4 +1,4 @@
-<?php
+<?php // trang quản lí loại tin
 // neu dang nhap
 if ($user) {
     //neu la tac gia

@@ -90,10 +90,10 @@
             echo
             '
                 <a class="list-group-item" href="' . $_DOMAIN . 'categoriesTL">
-                    <span class="glyphicon glyphicon-tag"></span> Quản Lí Thể loại 
+                    <span class="glyphicon glyphicon-tag"></span> Thể loại 
                 </a>
                 <a class="list-group-item" href="' . $_DOMAIN . 'categoriesLT">
-                    <span class="glyphicon glyphicon-tag"></span> Quản Lí Loại Tin
+                    <span class="glyphicon glyphicon-tag"></span> Loại Tin
                 </a>
                 <a class="list-group-item" href="' . $_DOMAIN . 'setting">
                     <span class="glyphicon glyphicon-cog"></span> Cài đặt chung

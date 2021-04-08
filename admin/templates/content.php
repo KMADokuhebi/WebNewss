@@ -37,6 +37,10 @@
         } else if ($tab == 'setting') {
             // Hiển thị template cài đặt chung
             require_once 'admin/templates/setting.php';
+        } else if ($tab == 'signout') {
+            // thoát và xoá session
+            echo ("<script>location.href = 'http://localhost:8080/webnewss/';</script>");
+            session_destroy();
         }
     }
     // Ngược lại không có tham số tab
