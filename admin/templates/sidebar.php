@@ -89,8 +89,11 @@
         if ($data_user['idGroup'] == '1') {
             echo
             '
-                <a class="list-group-item" href="' . $_DOMAIN . 'categories">
-                    <span class="glyphicon glyphicon-tag"></span> Chuyên mục
+                <a class="list-group-item" href="' . $_DOMAIN . 'categoriesTL">
+                    <span class="glyphicon glyphicon-tag"></span> Quản Lí Thể loại 
+                </a>
+                <a class="list-group-item" href="' . $_DOMAIN . 'categoriesLT">
+                    <span class="glyphicon glyphicon-tag"></span> Quản Lí Loại Tin
                 </a>
                 <a class="list-group-item" href="' . $_DOMAIN . 'setting">
                     <span class="glyphicon glyphicon-cog"></span> Cài đặt chung

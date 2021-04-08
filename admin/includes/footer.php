@@ -2,7 +2,7 @@
 <link rel=”stylesheet” href=”http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css”>
 <link rel=”stylesheet” href=”http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css”>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script> -->
-<script src="admin/js/jquery.form.min.js"></script>
+
 <!-- Liên kết thư viện hàm xử lý form -->
 <script src="admin/js/form.js"></script>
 </body>

@@ -11,9 +11,9 @@ spl_autoload_register(function ($class_name) {
         include_once $filename;
     }
 });
-// use classes\DB;
+
 use classes\Session;
-// use classes\Redirect;
+use classes\Redirect;
 
 
 use classes\DB;
@@ -21,7 +21,7 @@ use classes\DB;
 // Kết nối database
 $db = new DB();
 $db->connect();
-// var_dump($db->connect());
+
 $db->set_char('utf8');
 
 // Thông tin chung

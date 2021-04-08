@@ -56,7 +56,7 @@ if (isset($_POST['user_signin']) && isset($_POST['pass_signin'])) {
 
                     echo $show_alert . $success . 'Đăng nhập thành công.';
 
-                    echo ("<script>location.href = '/';</script>");
+                    echo ("<script>location.href = 'http://localhost:8080/webnewss/';</script>");
 
                     // new Redirect('http://localhost:8000'); // Trở về trang index
 

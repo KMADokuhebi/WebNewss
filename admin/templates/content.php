@@ -28,9 +28,12 @@
         } else if ($tab == 'photos') {
             // Hiển thị template hình ảnh
             require_once 'admin/templates/photos.php';
-        } else if ($tab == 'categories') {
-            // Hiển thị template chuyên mục
-            require_once 'admin/templates/categories.php';
+        } else if ($tab == 'categoriesTL') {
+            // Hiển thị template Thể loại & Loại Tin
+            require_once 'admin/templates/categoriesTL.php';
+        } else if ($tab == 'categoriesLT') {
+            // Hiển thị template Thể loại & Loại Tin
+            require_once 'admin/templates/categoriesLT.php';
         } else if ($tab == 'setting') {
             // Hiển thị template cài đặt chung
             require_once 'admin/templates/setting.php';
