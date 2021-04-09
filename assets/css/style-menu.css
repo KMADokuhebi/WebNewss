@@ -68,6 +68,10 @@ body {
     flex: 1;
     display: inline-flex;
   }
+.zone a{
+    color: black;
+    text-decoration: none;
+}
 .button-login{
     color: black;
     border: none;
