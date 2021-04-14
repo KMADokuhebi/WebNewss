@@ -19,6 +19,7 @@ class DB
     {
         //echo "cc";
         $this->cn = mysqli_connect($this->hostname, $this->username, $this->password, $this->dbname);
+        mysqli_set_charset($this->cn, 'UTF8');
         // var_dump($this->cn);
         return $this->cn;
     }
