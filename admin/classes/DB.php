@@ -35,7 +35,7 @@ class DB
     public function query($sql = null)
     {
         if ($this->cn) {
-            mysqli_query($this->cn, $sql);
+            mysqli_query($this->cn, $sql) or die(mysqli_error($this->cn));
         }
     }
 
