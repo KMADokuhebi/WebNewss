@@ -19,6 +19,7 @@ class DB
     {
         //echo "cc";
         $this->cn = mysqli_connect($this->hostname, $this->username, $this->password, $this->dbname);
+        mysqli_set_charset($this->cn, 'UTF8');
         // var_dump($this->cn);
         return $this->cn;
     }
@@ -35,7 +36,7 @@ class DB
     public function query($sql = null)
     {
         if ($this->cn) {
-            mysqli_query($this->cn, $sql);
+            mysqli_query($this->cn, $sql) or die(mysqli_error($this->cn));
         }
     }
 

@@ -16,27 +16,42 @@
         $tab = '';
     }
 
+    // Lấy tham số ac
+    if (isset($_GET['ac'])) {
+        $ac = trim(addslashes(htmlspecialchars($_GET['ac'])));
+    } else {
+        $ac = '';
+    }
+
     // Nếu có tham số tab
     if ($tab != '') {
         // Hiển thị template chức năng theo tham số tab
         if ($tab == 'profile') {
             // Hiển thị template hồ sơ cá nhân
-            require_once 'admin/templates/profile.php';
+            require_once $_SERVER["DOCUMENT_ROOT"] . '/webnewss/admin/templates/profile.php';
         } else if ($tab == 'posts') {
             // Hiển thị template bài viết
-            require_once 'admin/templates/posts.php';
+            if(strlen($ac)) {
+                if($ac == "create") {
+                    require_once $_SERVER["DOCUMENT_ROOT"] . '/webnewss/admin/templates/postCreate.php';
+                } else {
+                    require_once $_SERVER["DOCUMENT_ROOT"] . '/webnewss/admin/templates/postUpdate.php';
+                }
+            } else {
+                require_once $_SERVER["DOCUMENT_ROOT"] . '/webnewss/admin/templates/posts.php';
+            }
         } else if ($tab == 'photos') {
             // Hiển thị template hình ảnh
-            require_once 'admin/templates/photos.php';
+            require_once $_SERVER["DOCUMENT_ROOT"] . '/webnewss/admin/templates/photos.php';
         } else if ($tab == 'categoriesTL') {
             // Hiển thị template Thể loại & Loại Tin
-            require_once 'admin/templates/categoriesTL.php';
+            require_once $_SERVER["DOCUMENT_ROOT"] . '/webnewss/admin/templates/categoriesTL.php';
         } else if ($tab == 'categoriesLT') {
             // Hiển thị template Thể loại & Loại Tin
-            require_once 'admin/templates/categoriesLT.php';
+            require_once $_SERVER["DOCUMENT_ROOT"] . '/webnewss/admin/templates/categoriesLT.php';
         } else if ($tab == 'setting') {
             // Hiển thị template cài đặt chung
-            require_once 'admin/templates/setting.php';
+            require_once $_SERVER["DOCUMENT_ROOT"] . '/webnewss/admin/templates/setting.php';
         } else if ($tab == 'signout') {
             // thoát và xoá session
             echo ("<script>location.href = 'http://localhost:8080/webnewss/';</script>");
@@ -46,7 +61,7 @@
     // Ngược lại không có tham số tab
     else {
 
-        include 'admin/templates/dashboard.php';
+        include $_SERVER["DOCUMENT_ROOT"] . '/webnewss/admin/templates/dashboard.php';
     }
 
     ?>
