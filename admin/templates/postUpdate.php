@@ -4,6 +4,7 @@
     $db->connect();
 
     // Cập nhật bài viết
+<<<<<<< HEAD
     if(isset($_POST["id"]) && isset($_POST["title"])
         && isset($_POST["content"])) {
         $content = htmlentities(htmlspecialchars($_POST["content"]));
@@ -12,6 +13,11 @@
             $display = $_POST["display"] == "on" ? "1" : "0";
         }
         $result = $db->query("UPDATE tin SET TieuDe=\"{$_POST["title"]}\", Content=\"{$content}\", AnHien=$display WHERE idTin={$_POST["id"]}");
+=======
+    if(isset($_POST["id"]) and isset($_POST["title"]) and isset($_POST["content"])) {
+        $content = htmlentities(htmlspecialchars($_POST["content"]));
+        $result = $db->query("UPDATE tin SET TieuDe=\"{$_POST["title"]}\", Content=\"{$content}\" WHERE idTin={$_POST["id"]}");
+>>>>>>> 368aade5b309ef4348adcffe8530aefc560b36c6
         header("Location: /webnewss/admin/posts");
     }
 
@@ -32,6 +38,7 @@
     <textarea name="content" id="editor1" rows="10" cols="80">
         <?= html_entity_decode(htmlspecialchars_decode($tin["Content"])) ?>
     </textarea>
+<<<<<<< HEAD
     <div style="margin-top: 1rem; display: inline-block; float: right">
         <div class="input-group-text">
             <span style="font-size: 1.5rem">Hiện: </span>
@@ -40,6 +47,9 @@
         <button class="btn btn-primary" type="submit" style="margin-top: 2rem">Cập nhật</button>
     </div>
     
+=======
+    <button class="btn btn-primary" type="submit" style="margin-top: 2rem; float: right">Cập nhật</button>
+>>>>>>> 368aade5b309ef4348adcffe8530aefc560b36c6
 </form>
 
 <script src="/webnewss/assets/ckeditor/ckeditor.js"></script>

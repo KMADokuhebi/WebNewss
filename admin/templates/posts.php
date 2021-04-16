@@ -3,6 +3,7 @@
   $db = new DB();
   $db->connect();
 
+<<<<<<< HEAD
   // Toggle display bài viết
   if(isset($_POST["toggle_display_id"])) {
     $result = $db->fetch_assoc("SELECT * FROM tin WHERE idTin={$_POST["toggle_display_id"]}", 1);
@@ -13,6 +14,8 @@
     return;
   }
 
+=======
+>>>>>>> 368aade5b309ef4348adcffe8530aefc560b36c6
   // Xóa bài viết
   if(isset($_POST["delete_id"])) {
     $result = $db->query("DELETE FROM tin WHERE idTin={$_POST["delete_id"]}");
@@ -23,6 +26,7 @@
 <button class="btn btn-outline" style="margin-bottom: 1rem;">
   <a href="/webnewss/admin/posts/create">Tạo bài viết</a>
 </button>
+<<<<<<< HEAD
 <table class="table">
   <thead>
     <tr>
@@ -57,5 +61,29 @@ function toggleDisplay(id) {
   $.post("", {
     toggle_display_id: id,
   }, function(data, status) {});
+=======
+<ul class="list-group">
+  <?php foreach($tin as $item) { ?>
+    <li class="list-group-item">
+      <a href="/webnewss/admin/posts/<?= $item["idTin"] ?>"><?= $item["TieuDe"] ?></a>
+      <div style="float: right">
+        <form action="" method="POST">
+          <input type="hidden" name="delete_id" value="<?= $item["idTin"] ?>" />
+          <button class="btn btn-danger btn-xs" type="submit">Xóa</button>
+        </form>
+      </div>
+    </li>
+  <?php } ?>
+</ul>
+
+<script>
+function xoa(id) {
+  let res = confirm("Bạn chắc chắn muốn xóa bài viết?");
+  if(res) {
+    $.post("", function({
+      delete_id: id,
+    }, status) {});
+  }
+>>>>>>> 368aade5b309ef4348adcffe8530aefc560b36c6
 }
 </script>
