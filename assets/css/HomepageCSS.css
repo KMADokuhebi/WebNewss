@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
 }
+a {
+    color: black;
+    text-decoration: none;
+}
 .content-home{
     max-height: auto;
     max-width: 1138px;
@@ -177,7 +181,7 @@
     -webkit-line-clamp: 3;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    height: 64px;
+    height: 57px;
 }
 .right p{
     overflow: hidden;
@@ -193,7 +197,7 @@
 }
 .right-top-right{
     padding-left: 70%;
-    margin-top: -148px; 
+    margin-top: -132px; 
 }
 .right-bottom{
     font-weight: bold;
@@ -214,3 +218,4 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
 }
+
