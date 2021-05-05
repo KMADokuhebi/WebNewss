@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
 }
+a {
+    color: black;
+    text-decoration: none;
+}
 .content-home{
     max-height: auto;
     max-width: 1138px;
