@@ -82,13 +82,16 @@
         <a class="list-group-item" href="<?php echo $_DOMAIN;  ?>photos">
             <span class="glyphicon glyphicon-picture"></span> Hình ảnh
         </a>
+
         <?php
 
         // Phân quyền sidebar
         // Nếu tài khoản là admin
         if ($data_user['idGroup'] == '1') {
             echo
-            '
+            '   <a class="list-group-item" href="' . $_DOMAIN . 'accounts">
+                    <span class="glyphicon glyphicon-lock"></span> Tài khoản
+                </a>
                 <a class="list-group-item" href="' . $_DOMAIN . 'categoriesTL">
                     <span class="glyphicon glyphicon-tag"></span> Thể loại 
                 </a>

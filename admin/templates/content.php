@@ -31,8 +31,8 @@
             require_once $_SERVER["DOCUMENT_ROOT"] . '/webnewss/admin/templates/profile.php';
         } else if ($tab == 'posts') {
             // Hiển thị template bài viết
-            if(strlen($ac)) {
-                if($ac == "create") {
+            if (strlen($ac)) {
+                if ($ac == "create") {
                     require_once $_SERVER["DOCUMENT_ROOT"] . '/webnewss/admin/templates/postCreate.php';
                 } else {
                     require_once $_SERVER["DOCUMENT_ROOT"] . '/webnewss/admin/templates/postUpdate.php';
@@ -42,7 +42,7 @@
             }
         } else if ($tab == 'photos') {
             // Hiển thị template hình ảnh
-            require_once $_SERVER["DOCUMENT_ROOT"] . '/webnewss/admin/templates/photos.php';
+            // require_once $_SERVER["DOCUMENT_ROOT"] . '/webnewss/admin/templates/photos.php';
         } else if ($tab == 'categoriesTL') {
             // Hiển thị template Thể loại & Loại Tin
             require_once $_SERVER["DOCUMENT_ROOT"] . '/webnewss/admin/templates/categoriesTL.php';
@@ -56,6 +56,10 @@
             // thoát và xoá session
             echo ("<script>location.href = 'http://localhost:8080/webnewss/';</script>");
             session_destroy();
+        } else if ($tab == 'accounts') {
+            // Hiển thị template tài khoản
+
+            require_once $_SERVER["DOCUMENT_ROOT"] . '/webnewss/admin/templates/accounts.php';
         }
     }
     // Ngược lại không có tham số tab

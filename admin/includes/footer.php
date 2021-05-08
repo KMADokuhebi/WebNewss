@@ -27,10 +27,14 @@ if ($tab != '') {
         echo '<script>$(".sidebar ul a:eq(3)").addClass("active");</script>';
     } else if ($tab == 'photos') {
         echo '<script>$(".sidebar ul a:eq(4)").addClass("active");</script>';
-    } else if ($tab == 'categories') {
+    } else if ($tab == 'accounts') {
         echo '<script>$(".sidebar ul a:eq(5)").addClass("active");</script>';
     } else if ($tab == 'setting') {
+        echo '<script>$(".sidebar ul a:eq(8)").addClass("active");</script>';
+    } else if ($tab == 'categoriesTL') {
         echo '<script>$(".sidebar ul a:eq(6)").addClass("active");</script>';
+    } else if ($tab == 'categoriesLT') {
+        echo '<script>$(".sidebar ul a:eq(7)").addClass("active");</script>';
     }
 }
 

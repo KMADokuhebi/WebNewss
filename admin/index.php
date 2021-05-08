@@ -8,7 +8,7 @@ spl_autoload_register(function ($class_name) {
     }
 });
 // Require database & thông tin chung
-require_once 'core/init.php';
+require_once 'admin/core/init.php';
 // Require header
 require_once 'includes/header.php';
 

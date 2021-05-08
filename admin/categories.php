@@ -1,7 +1,7 @@
 <?php
 
 // Kết nối database và thông tin chung
-require_once './core/init.php';
+require_once 'admin/core/init.php';
 // Nếu đăng nhập
 if ($user) {
     // Nếu tồn tại POST action
