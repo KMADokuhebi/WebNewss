@@ -8,18 +8,18 @@ $db->connect();
 
 // Toggle display bài viết
 if (isset($_POST["toggle_display_id"])) {
-  $result = $db->fetch_assoc("SELECT * FROM tin WHERE idTin={$_POST["toggle_display_id"]}", 1);
-  if ($result) {
-    $newData = $result["AnHien"] == "1" ? "0" : "1";
-    $result = $db->query("UPDATE tin SET AnHien=$newData WHERE idTin={$_POST["toggle_display_id"]}");
-  }
-  return;
+    $result = $db->fetch_assoc("SELECT * FROM tin WHERE idTin={$_POST["toggle_display_id"]}", 1);
+    if ($result) {
+        $newData = $result["AnHien"] == "1" ? "0" : "1";
+        $result = $db->query("UPDATE tin SET AnHien=$newData WHERE idTin={$_POST["toggle_display_id"]}");
+    }
+    return;
 }
 
 
 // Xóa bài viết
 if (isset($_POST["delete_id"])) {
-  $result = $db->query("DELETE FROM tin WHERE idTin={$_POST["delete_id"]}");
+    $result = $db->query("DELETE FROM tin WHERE idTin={$_POST["delete_id"]}");
 }
 
 $tin = $db->fetch_assoc("SELECT * FROM tin ORDER BY idTin DESC", 0);
@@ -61,6 +61,7 @@ function toggleDisplay(id) {
     $.post("", {
         toggle_display_id: id,
     }, function(data, status) {});
+}
 </script>
 
 <ul class="list-group">
@@ -85,6 +86,5 @@ function xoa(id) {
             delete_id: id,
         }, status) {});
     }
-
 }
 </script>

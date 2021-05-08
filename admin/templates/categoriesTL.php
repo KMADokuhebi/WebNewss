@@ -1,5 +1,8 @@
 <?php // trang quản lí loại tin
 // neu dang nhap
+
+use function PHPSTORM_META\type;
+
 if ($user) {
     //neu la tac gia
     if ($data_user['idGroup'] == 0) {
@@ -34,25 +37,41 @@ if ($user) {
                     </a> 
                 ';
 
+                //gủi đi
+                if (isset($_POST["Tao"])) {
+                    // lay id cao nhat vaf tanglen 1
+                    $select_sql = "SELECT idTL FROM theloai ORDER BY idTL DESC";
+                    $type = 1;
+                    $d = $db->fetch_assoc($select_sql, $type);
+                    $id = (int)$d["idTL"] + 1;
+                    // var_dump($d["idTL"]);
+                    var_dump($id);
+                    // ghi du lieu vao sql
+                    $input = $_POST["InputTL"];
+                    var_dump($input);
+                    $insert_sql = "INSERT INTO theloai(idTL,TenTL) value ('$id','$input') ";
+                    if ($db->query($insert_sql) == NULL) {
+                        echo '<br><br><div class="alert alert-info">Thêm thành công</div>';
+                        echo ("<script>location.href = '/webnewss/admin/categoriesTL/';</script>");
+                    } else {
+                        echo '<br><br><div class="alert alert-info">Thất bại</div>';
+                    }
+                }
+
+
                 // Content thêm Thể loại
                 echo
                 '   
                 <p class="form-add-cate">
-                    <form method="POST" id="formAddCate" onsubmit="return false;">
-                        <div class="form-group">
+                    <form method="POST" id="formAddCate" >
+                        <div class="form-group" >
                             <label>Tên Thể loại</label>
-                            <input type="text" class="form-control title" id="label_add_cate">
+                            <input type="text" name="InputTL" class="form-control title" id="label_add_cate">
                         </div>
                         
-                        
-                        <div class="form-group hidden parent-add-cate">
-                            <label>Parent Thể loại</label>
-                            <select id="parent_add_cate" class="form-control">
-                            </select>
-                        </div>
                        
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Tạo</button>
+                            <button type="submit" name="Tao" class="btn btn-primary">Tạo</button>
                         </div>
                         <div class="alert alert-danger hidden"></div>
                     </form>
@@ -94,9 +113,7 @@ if ($user) {
                 <a href="' . $_DOMAIN . 'categoriesTL/add" class="btn btn-default">
                     <span class="glyphicon glyphicon-plus"></span> Thêm
                 </a> 
-                <a href="' . $_DOMAIN . 'categoriesTL/edit" class="btn btn-default">
-                    <span class="glyphicon glyphicon-edit"></span> Sửa
-                </a> 
+               
                 <a class="btn btn-danger" id="del_cate_list">
                     <span class="glyphicon glyphicon-trash"></span> Xoá
                 </a> 
