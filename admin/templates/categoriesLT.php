@@ -26,7 +26,33 @@ if ($user) {
         if ($ac != '') {
             // Trang thêm Loại tin
             if ($ac == 'add') {
+                // them loai tin
+
+                if (isset($_POST["Tao"])) {
+                    // lay id cao nhat vaf tanglen 1
+                    $select_sql = "SELECT idLT FROM theloai ORDER BY idLT DESC";
+                    $type = 1;
+                    $d = $db->fetch_assoc($select_sql, $type);
+                    $id = (int)$d["idLT"] + 1;
+                    // var_dump($id);
+                    // ghi du lieu vao sql
+                    $input = $_POST["input"];
+                    $idloaitin = $_POST["chon"];
+                    var_dump($input);
+                    var_dump($idloaitin);
+                    $insert_sql = "INSERT INTO loaitin(Ten,idTL) value ('$input','$idloaitin') ";
+                    if ($db->query($insert_sql) == NULL) {
+                        echo '<br><br><div class="alert alert-info">Thêm thành công</div>';
+                        echo ("<script>location.href = '/webnewss/admin/categoriesLT/';</script>");
+                    } else {
+                        echo '<br><br><div class="alert alert-info">Thất bại</div>';
+                    }
+                }
+
                 // Dãy nút của thêm Loại tin
+
+
+
                 echo
                 '
                     <a href="' . $_DOMAIN . 'categoriesLT" class="btn btn-default">
@@ -34,32 +60,47 @@ if ($user) {
                     </a> 
                 ';
 
-                // Content thêm Loại tin
-                echo
-                '   
-                <p class="form-add-cate">
-                    <form method="POST" id="formAddCate" onsubmit="return false;">
 
-                        <div class="form-group">
-                            <label>Tên Loại tin</label>
-                            <input type="text" class="form-control title" id="label_add_cate">
-                        </div>
-                        
-                        
-                        <div class="form-group hidden parent-add-cate">
-                            <label>Parent Loại tin</label>
-                            <select id="parent_add_cate" class="form-control">
-                            </select>
-                        </div>
-                       
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Tạo</button>
-                        </div>
-                        <div class="alert alert-danger hidden"></div>
-                    </form>
-                </p>
-                ';
+                echo '<p class="form-add-cate">';
+                echo '    <form method="POST" id="formAddCate" >';
+
+                echo '    <div class="form-group">';
+                echo '            <label>Tên Loại tin</label>';
+                echo '            <input type="text" name="input"class="form-control title" id="label_add_cate">';
+                echo '    </div>';
+                // bảng xổ xuống
+                $type = 0;
+                echo '        <div class="form-group">';
+                $sql_cl = "SELECT Ten from loaitin";
+                echo "          <label for='chon'> Chọn THể loại </label>";
+                echo "          <select id='chon' name='chon' class='form-control' style='width:200px; color:black;'>";
+                // du lieu dong chua hoan thanh
+                // foreach ($row = $db->fetch_assoc($sql_cl, $type) as $value) {
+                //     echo "<option value= $row[idLT] > $row[Ten]</option>";
+                // }
+                // code tĩnh
+                echo            "<option value='1'  > Xã Hội </option>";
+                echo            "<option value='2'  > Thế Giới </option>";
+                echo            "<option value='3'  > Kinh Doanh </option>";
+                echo            "<option value='4'  > Văn Hóa </option>";
+                echo            "<option value='5'  > Thể Thao </option>";
+                echo            "<option value='6'  > Pháp Luật </option>";
+                echo            "<option value='7'  > Đời Sống </option>";
+                echo            "<option value='8'  > Khoa Học </option>";
+                echo            "<option value='9'  > Vi Tính </option>";
+                echo            "</select>";
+                echo '        </div>';
+                // Content thêm Loại tin
+
+
+                echo '        <div class="form-group">';
+                echo '            <button type="submit" name="Tao" class="btn btn-primary">Tạo</button>';
+                echo '        </div>';
+                echo '        <div class="alert alert-danger hidden"></div>';
+                echo '    </form>';
+                echo '</p>';
             }
+
             // Trang chỉnh sửa Loại tin
             else if ($ac == 'edit') {
                 $sql_check_idLT = "SELECT idLT FROM theloai WHERE idLT = '$id'";
@@ -89,6 +130,8 @@ if ($user) {
         // Ngược lại không có tham số ac
         // Trang danh sách Loại tin
         else {
+
+
             // Dãy nút của danh sách Loại tin
             echo
             '
@@ -103,6 +146,7 @@ if ($user) {
             //     <a class="btn btn-danger" id="del_cate_list">
             //         <span class="glyphicon glyphicon-trash"></span> Xoá
             //     </a> 
+
 
             // Content danh sách Loại tin
             $sql_get_list_cate = "SELECT * FROM loaitin ORDER BY idLT DESC";
