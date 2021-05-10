@@ -98,9 +98,7 @@
                 <a class="list-group-item" href="' . $_DOMAIN . 'categoriesLT">
                     <span class="glyphicon glyphicon-tag"></span> Loại Tin
                 </a>
-                <a class="list-group-item" href="' . $_DOMAIN . 'setting">
-                    <span class="glyphicon glyphicon-cog"></span> Cài đặt chung
-                </a>  
+  
             ';
         }
 
