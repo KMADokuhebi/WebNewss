@@ -49,9 +49,6 @@
         } else if ($tab == 'categoriesLT') {
             // Hiển thị template Thể loại & Loại Tin
             require_once $_SERVER["DOCUMENT_ROOT"] . '/webnewss/admin/templates/categoriesLT.php';
-        } else if ($tab == 'setting') {
-            // Hiển thị template cài đặt chung
-            require_once $_SERVER["DOCUMENT_ROOT"] . '/webnewss/admin/templates/setting.php';
         } else if ($tab == 'signout') {
             // thoát và xoá session
             echo ("<script>location.href = 'http://localhost:8080/webnewss/';</script>");

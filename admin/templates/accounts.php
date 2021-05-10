@@ -71,15 +71,7 @@ if ($user) {
                 <a href="' . $_DOMAIN . 'accounts" class="btn btn-default">
                     <span class="glyphicon glyphicon-repeat"></span> Reload
                 </a>
-                <a class="btn btn-warning" id="lock_acc_list">
-                    <span class="glyphicon glyphicon-lock"></span> khoá
-                </a>
-                <a class="btn btn-success" id="unlock_acc_list">
-                    <span class="glyphicon glyphicon-lock"></span> Mở khoá
-                </a> 
-                <a class="btn btn-danger" id="del_acc_list">
-                    <span class="glyphicon glyphicon-trash"></span> Xoá
-                </a> 
+                
             ';
             // Trang danh sách tài khoản
 
