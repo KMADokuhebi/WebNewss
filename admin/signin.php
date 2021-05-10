@@ -1,28 +1,33 @@
 <?php
+spl_autoload_register(function ($class_name) {
+    $filename = $class_name . '.php';
+    $filename = str_replace('\\', '/', $filename);
+    if (file_exists($filename)) {
+        include_once $filename;
+    }
+});
 include_once("core/init.php");
 
 use classes\DB;
 use classes\Session;
-use classes\Redirect;
 
 // Kết nối database
 $db = new DB();
 $db->connect();
+$session = new Session();
 
-if (isset($_POST['user_signin']) && isset($_POST['pass_signin'])) {
+$message = "";
+$status = false;
+if ((isset($_POST['user_signin']) && isset($_POST['pass_signin']))) {
     // Xử lý các giá trị 
     $user_signin = trim(htmlspecialchars(addslashes($_POST['user_signin'])));
     $pass_signin = trim(htmlspecialchars(addslashes($_POST['pass_signin'])));
-    // Các biến xử lý thông báo
-    $show_alert = '<script>$("#formSignin .alert").removeClass("hidden");</script>';
-    $hide_alert = '<script>$("#formSignin .alert").addClass("hidden");</script>';
-    $success = '<script>$("#formSignin .alert").attr("class", "alert alert-success");</script>';
+    print_r($user_signin . $pass_signin . "asd");
     // Nếu giá trị rỗng
     if ($user_signin == '' || $pass_signin == '') {
-        echo $show_alert . 'Vui lòng điền đầy đủ thông tin.';
-    }
-    // Ngược lại
-    else {
+        $message = 'Vui lòng điền đầy đủ thông tin';
+        echo 
+    } else { // Ngược lại
         $sql_check_user_exist = "SELECT Username FROM users WHERE Username = '$user_signin'";
         // Nếu tồn tại Username
         if ($db->num_rows($sql_check_user_exist)) {
@@ -38,24 +43,48 @@ if (isset($_POST['user_signin']) && isset($_POST['pass_signin'])) {
                     // $session = new Session();
                     // $session->send($user_signin);
                     $db->close(); // Giải phóng
-                    echo $show_alert . $success . 'Đăng nhập thành công.';
                     echo ("<script>location.href = 'http://localhost:8080/webnewss/';</script>");
-                    // new Redirect('http://localhost:8000'); // Trở về trang index
                 } else {
-                    echo $show_alert . 'Tài khoản của bạn đã bị khoá, vui lòng liên hệ quản trị viện để biết thêm thông tin chi tiết.';
+                    $message = 'Tài khoản của bạn đã bị khoá, vui lòng liên hệ quản trị viện để biết thêm thông tin chi tiết.';
                 }
             } else {
-                echo $show_alert . 'Mật khẩu không chính xác.';
+                $message = 'Mật khẩu không chính xác.';
             }
         }
         // Ngược lại không tồn tại Username
         else {
-            echo $show_alert . 'Tên đăng nhập không tồn tại.';
+            $message = 'Tên đăng nhập không tồn tại.';
         }
     }
 }
-// Ngược lại không tồn tại phương thức post
-else {
-    // new Redirect($_DOMAIN); // Trở về trang index
-    echo ("<script>location.href = 'http://localhost:8080/webnewss/';</script>");
-}
+?>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <p>Vui lòng đăng nhập để tiếp tục.</p>
+            <form method="POST" id="formSignin" action=".">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                        <input type="text" class="form-control" placeholder="Tên đăng nhập" name="user_signin">
+                    </div><!-- div.input-group -->
+                </div><!-- div.form-group -->
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                        <input type="password" class="form-control" placeholder="Mật khẩu" name="pass_signin">
+                    </div><!-- div.input-group -->
+                </div><!-- div.form-group -->
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                </div><!-- div.form-group -->
+                <?php
+                if (strlen($message)) {
+                    ?><div class="alert alert-danger hidden"><?= $message ?></div><?php
+                }
+                ?>
+            </form><!-- form#formSignin -->
+        </div><!-- dib.col-md-6 -->
+    </div><!-- div.row -->
+</div><!-- div.container -->

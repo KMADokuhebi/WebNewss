@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-6">
             <p>Vui lòng đăng nhập để tiếp tục.</p>
-            <form method="POST" id="formSignin" onsubmit="return false;">
+            <form method="POST" id="formSignin" action="signin.php">
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
@@ -16,8 +16,6 @@
                     </div><!-- div.input-group -->
                 </div><!-- div.form-group -->
                 <div class="form-group">
-
-
                     <button type="submit" class="btn btn-primary">Đăng nhập</button>
                 </div><!-- div.form-group -->
                 <div class="alert alert-danger hidden"></div>
