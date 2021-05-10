@@ -2,7 +2,6 @@
 <h3>Bài viết</h3>
 <div class="row">
     <?php
-
     if ($data_user['idGroup'] == '1') {
         // Lấy tổng số bài viết
         $sql_get_count_all_post = "SELECT idTin FROM tin";
@@ -19,7 +18,7 @@
     ';
     } else {
         // Lấy số bài viết của tác giả
-        $sql_get_count_post_author = "SELECT idTin FROM tin WHERE idUser = '$data_user[idUser]'";
+        $sql_get_count_post_author = "SELECT idTin FROM tin WHERE idUser = '" . $data_user['idUser'] . "'";
         $count_post_author = $db->num_rows($sql_get_count_post_author);
 
         echo

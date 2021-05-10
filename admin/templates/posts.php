@@ -64,20 +64,6 @@ function toggleDisplay(id) {
 }
 </script>
 
-<ul class="list-group">
-    <?php foreach ($tin as $item) { ?>
-    <li class="list-group-item">
-        <a href="/webnewss/admin/posts/<?= $item["idTin"] ?>"><?= $item["TieuDe"] ?></a>
-        <div style="float: right">
-            <form action="" method="POST">
-                <input type="hidden" name="delete_id" value="<?= $item["idTin"] ?>" />
-                <button class="btn btn-danger btn-xs" type="submit">Xóa</button>
-            </form>
-        </div>
-    </li>
-    <?php } ?>
-</ul>
-
 <script>
 function xoa(id) {
     let res = confirm("Bạn chắc chắn muốn xóa bài viết?");

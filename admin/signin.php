@@ -18,22 +18,22 @@ $session = new Session();
 
 $message = "";
 $status = false;
+
 if ((isset($_POST['user_signin']) && isset($_POST['pass_signin']))) {
     // Xử lý các giá trị 
     $user_signin = trim(htmlspecialchars(addslashes($_POST['user_signin'])));
     $pass_signin = trim(htmlspecialchars(addslashes($_POST['pass_signin'])));
-    print_r($user_signin . $pass_signin . "asd");
     // Nếu giá trị rỗng
     if ($user_signin == '' || $pass_signin == '') {
         $message = 'Vui lòng điền đầy đủ thông tin';
-        echo 
     } else { // Ngược lại
         $sql_check_user_exist = "SELECT Username FROM users WHERE Username = '$user_signin'";
         // Nếu tồn tại Username
         if ($db->num_rows($sql_check_user_exist)) {
             $pass_signin = md5($pass_signin);
-            $sql_check_signin = "SELECT Username, Password FROM users WHERE Username = '$user_signin' AND Password = '$pass_signin'";
+            $sql_check_signin = "SELECT Username, `Password` FROM users WHERE Username = '$user_signin' AND `Password` = '$pass_signin'";
             if ($db->num_rows($sql_check_signin)) {
+                echo "OK";
                 $sql_check_stt = "SELECT Username, Password, Active FROM users WHERE Username = '$user_signin' AND Password = '$pass_signin' AND Active = '0'";
                 // Nếu Username và Password khớp và tài khoản không bị khoá (Active = 0)
                 if ($db->num_rows($sql_check_stt)) {
@@ -43,7 +43,7 @@ if ((isset($_POST['user_signin']) && isset($_POST['pass_signin']))) {
                     // $session = new Session();
                     // $session->send($user_signin);
                     $db->close(); // Giải phóng
-                    echo ("<script>location.href = 'http://localhost:8080/webnewss/';</script>");
+                    echo ("<script>location.href = '/webnewss/';</script>");
                 } else {
                     $message = 'Tài khoản của bạn đã bị khoá, vui lòng liên hệ quản trị viện để biết thêm thông tin chi tiết.';
                 }

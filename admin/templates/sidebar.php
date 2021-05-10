@@ -23,7 +23,7 @@
                     use classes\DB;
 
                     $getuser = $session->get();
-                    $sql = "SELECT HoTen, idGroup,Active, url_avatar FROM users WHERE Username = '$getuser'";
+                    $sql = "SELECT * FROM users WHERE Username = '$getuser'";
                     $type = 0; // luoi nen code vay
                     $db = new DB;
 
