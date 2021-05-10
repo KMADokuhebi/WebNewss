@@ -10,15 +10,15 @@ if ($user) {
     if ($data_user['url_avatar'] == '') {
         $data_user['url_avatar'] = $_DOMAIN . 'images/profile.png';
     } else {
-        $data_user['url_avatar'] = str_replace('admin/', '', $_DOMAIN) . $data_user['url_avatar'];
+        $data_user['url_avatar'] = $_DOMAIN . 'images/profile.png';
     }
     $type1 = 1;
     $sql_user = "SELECT * FROM theloai WHERE Username = '$user'";
     $us =   $db->fetch_assoc($sql_user, $type1);
 
-    var_dump($us);
-    // var_dump();
-    var_dump($data_user);
+    // var_dump($_DOMAIN);
+    // var_dump($data_user['url_avatar']);
+    // var_dump($data_user);
 
     // Form Upload ảnh đại diện
     echo
@@ -30,7 +30,7 @@ if ($user) {
                 <form action="' . $_DOMAIN . 'profile.php" method="POST" onsubmit="return false;" id="formUpAvt" enctype="multipart/form-data">
                     <div class="form-group box-current-img">
                         <p><strong>Ảnh hiện tại</strong></p>
-                        <img src="' . $us["url_avatar"] . '" alt="Ảnh đại diện của ' . $us["HoTen"] . '" width="80" height="80">
+                        <img src="' . $data_user['url_avatar'] . '" alt="Ảnh đại diện của ' . $data_user['HoTen'] . '" width="80" height="80">
                     </div>
                     <div class="alert alert-info">Vui lòng chọn file ảnh có đuôi .jpg, .png, .gif và có dung lượng dưới 5MB.</div>
                     <div class="form-group">
@@ -64,15 +64,11 @@ if ($user) {
                 <form method="POST" onsubmit="return false;" id="formUpdateInfo">
                     <div class="form-group">
                         <label>Tên hiển thị *</label>
-                        <input type="text" class="form-control" id="dn_update" value="' . $us["HoTen"] . '">
+                        <input type="text" class="form-control" id="dn_update" value="' . $data_user["HoTen"] . '">
                     </div>
                     <div class="form-group">
                         <label>Email *</label>
-                        <input type="text" class="form-control" id="email_update" value="' . $us["Email"] . '">
-                    </div>
-                    <div class="form-group">
-                        <label>So Điện Thoại</label>
-                        <input type="text" class="form-control" id="fb_update" value="' . $us["Dienthoai"] . '">
+                        <input type="text" class="form-control" id="email_update" ">
                     </div>
                   
                     <div class="form-group">
