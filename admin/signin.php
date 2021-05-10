@@ -1,13 +1,4 @@
 <?php
-// ket noi database
-spl_autoload_register(function ($class_name) {
-    $filename = $class_name . '.php';
-    $filename = str_replace('\\', '/', $filename);
-    if (file_exists($filename)) {
-        include_once $filename;
-    }
-});
-// show_source("signin.php");
 include_once("core/init.php");
 
 use classes\DB;
@@ -17,10 +8,6 @@ use classes\Redirect;
 // Kết nối database
 $db = new DB();
 $db->connect();
-// var_dump($db);
-
-
-// neu co POST
 
 if (isset($_POST['user_signin']) && isset($_POST['pass_signin'])) {
     // Xử lý các giá trị 
@@ -50,16 +37,10 @@ if (isset($_POST['user_signin']) && isset($_POST['pass_signin'])) {
                     $session->send($user_signin);
                     // $session = new Session();
                     // $session->send($user_signin);
-
-
                     $db->close(); // Giải phóng
-
                     echo $show_alert . $success . 'Đăng nhập thành công.';
-
                     echo ("<script>location.href = 'http://localhost:8080/webnewss/';</script>");
-
                     // new Redirect('http://localhost:8000'); // Trở về trang index
-
                 } else {
                     echo $show_alert . 'Tài khoản của bạn đã bị khoá, vui lòng liên hệ quản trị viện để biết thêm thông tin chi tiết.';
                 }

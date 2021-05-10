@@ -8,7 +8,7 @@ spl_autoload_register(function ($class_name) {
     }
 });
 // Require database & thông tin chung
-require_once 'admin/core/init.php';
+require_once 'core/init.php';
 // Require header
 require_once 'includes/header.php';
 
@@ -24,7 +24,7 @@ if ($user) {
 // Nếu không đăng nhập
 else {
     // Hiển thị form đăng nhập
-    require_once 'templates/signin.php';
+    require_once 'signin.php';
 }
 
 // Require footer
