@@ -60,7 +60,7 @@ if ($user) {
                 <form method="POST" onsubmit="return false;" id="formUpdateInfo">
                     <div class="form-group">
                         <label>Tên hiển thị *</label>
-                        <input type="text" class="form-control" id="dn_update" value="' . $data_user["HoTen"] . '">
+                        <input disabled type="text" class="form-control" id="dn_update" value="' . $data_user["HoTen"] . '">
                     </div>
                     <div class="form-group">
                         <label>Email *</label>

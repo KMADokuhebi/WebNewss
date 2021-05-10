@@ -6,7 +6,8 @@
     // Cập nhật bài viết
     if(isset($_POST["title"]) && isset($_POST["content"]) && isset($_POST["display"])) {
         $content = htmlentities(htmlspecialchars($_POST["content"]));
-        $result = $db->query("INSERT INTO tin(TieuDe, Content, AnHien) VALUES (\"{$_POST["title"]}\", \"{$content}\"), {$_POST["display"]}");
+        $_POST["display"] = $_POST["display"] == "on" ? 1 : 0;
+        $result = $db->query("INSERT INTO tin(TieuDe, Content, AnHien) VALUES (\"{$_POST["title"]}\", \"{$content}\", {$_POST["display"]})");
         header("Location: /webnewss/admin/posts");
     }
 ?>
