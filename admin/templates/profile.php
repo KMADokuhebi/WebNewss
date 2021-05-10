@@ -16,10 +16,6 @@ if ($user) {
     $sql_user = "SELECT * FROM theloai WHERE Username = '$user'";
     $us =   $db->fetch_assoc($sql_user, $type1);
 
-    // var_dump($_DOMAIN);
-    // var_dump($data_user['url_avatar']);
-    // var_dump($data_user);
-
     // Form Upload ảnh đại diện
     echo
     '

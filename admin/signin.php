@@ -37,13 +37,9 @@ if ((isset($_POST['user_signin']) && isset($_POST['pass_signin']))) {
                 $sql_check_stt = "SELECT Username, Password, Active FROM users WHERE Username = '$user_signin' AND Password = '$pass_signin' AND Active = '0'";
                 // Nếu Username và Password khớp và tài khoản không bị khoá (Active = 0)
                 if ($db->num_rows($sql_check_stt)) {
-                    // Lưu session
-                    // $GLOBALS["user_signin"];
                     $session->send($user_signin);
-                    // $session = new Session();
-                    // $session->send($user_signin);
                     $db->close(); // Giải phóng
-                    echo ("<script>location.href = '/webnewss/';</script>");
+                    echo ("<script>location.href = '/webnewss/admin';</script>");
                 } else {
                     $message = 'Tài khoản của bạn đã bị khoá, vui lòng liên hệ quản trị viện để biết thêm thông tin chi tiết.';
                 }
@@ -63,7 +59,7 @@ if ((isset($_POST['user_signin']) && isset($_POST['pass_signin']))) {
     <div class="row">
         <div class="col-md-6">
             <p>Vui lòng đăng nhập để tiếp tục.</p>
-            <form method="POST" id="formSignin" action=".">
+            <form method="POST" id="formSignin">
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
